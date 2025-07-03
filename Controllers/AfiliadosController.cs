@@ -62,12 +62,11 @@ namespace WebApp_Tickets.Controllers
         {
             if (id != afiliado.Id) return BadRequest();
 
-            if (ModelState.IsValid)
-            {
+            
                 var afiliadoExistente = await _context.Afiliados.FindAsync(id);
                 if (afiliadoExistente == null) return NotFound();
 
-                // Actualizar solo los datos que querés permitir modificar
+               
                 afiliadoExistente.Apellido = afiliado.Apellido;
                 afiliadoExistente.Nombres = afiliado.Nombres;
                 afiliadoExistente.DNI = afiliado.DNI;
@@ -85,7 +84,7 @@ namespace WebApp_Tickets.Controllers
                 }
 
                 return RedirectToAction(nameof(Index));
-            }
+            
 
             return View(afiliado);
         }
