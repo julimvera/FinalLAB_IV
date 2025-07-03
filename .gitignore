@@ -1,0 +1,11 @@
+﻿## Archivos de Visual Studio
+.vs/
+*.user
+*.suo
+*.vcxproj.user
+*.dbmdl
+*.log
+
+## Carpetas de compilación
+bin/
+obj/
